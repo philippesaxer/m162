@@ -5,7 +5,7 @@
 ### Github Einführung:
 * Neues Repositorie erstellen und bennen
 * Readme.md auf on stellen
-* Lehrer hinzüfugen indem man in die Einstellungen geht
+* Lehrer hinzüfugen indem man in die Einstellungen geht und bei Collaborator hinzüfugt mit benutzername
 * File erstellen und bennen
 * Text/Code schreiben
 
