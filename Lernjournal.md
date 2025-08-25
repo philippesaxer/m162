@@ -15,6 +15,11 @@
 
 ## Datenstruktur Überblick
 
+- [Datenstruktur](#datenstruktur)
+- [Arten von Daten](#arten-von-daten)
+- [Verarbeitung unstrukturierter Daten](#verarbeitung-unstrukturierter-daten)
+- [Strukturierungsgrad](#strukturierungsgrad)
+  
 ### Datenstruktur
 - Objekt zur **Speicherung und Organisation von Daten**.
 - Charakterisiert durch **Daten + Operationen** (Zugriff, Verwaltung).
