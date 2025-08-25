@@ -2,8 +2,8 @@
 
 # Lernjournal Tag 1
 
-- [GitHub Einführung](#-github-einführung)
-- [Markdown Tutorial](#-markdown-tutorial)
+- [GitHub Einführung](#github-einführung)
+- [Markdown Tutorial](#markdown-tutorial)
 
 ## Github Einführung:
 * Neues Repositorie erstellen und bennen
