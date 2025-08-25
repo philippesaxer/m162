@@ -61,8 +61,8 @@ Kurzüberblick über **diskrete vs. stetige Daten**, **Skalentypen** (Nominal, O
 
 | Typ       | Definition                                                                 | Beispiel (TBZ)                                                                 |
 |-----------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| **Diskret**  | Werte **abzählbar** (endliche/abzählbar unendliche Anzahl von Ausprägungen) | Lieblingsmodul im Berufsbild Informatik (endliche Liste von Modulen)           |
-| **Stetig**   | Werte **nicht abzählbar** (kontinuierliche Skala)                         | Freitext-Kommentare zum Modul **m162** (beliebiger Text)                        |
+| **Diskret**  | Werte **abzählbar** (endliche/abzählbar unendliche Anzahl von Ausprägungen) | Sie werden in einem Fragebogen an der TBZ (Abteilung IT) gefragt, welches ihr Lieblingsmodul ist. Es gibt nur eine spezifische Anzahl im Berufsbild Informatik. Die möglichen Werte sind abzählbar.           |
+| **Stetig**   | Werte **nicht abzählbar** (kontinuierliche Skala)                         | Sie werden in einem Fragebogen an der TBZ (Abteilung IT) gefragt, ob sie Kommentare zu dem Modul m162 haben. Die möglichen Antworten sind nicht abzählbar, da jede Person beliebigen Text schreiben kann.
 
 ---
 
