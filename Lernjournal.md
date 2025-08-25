@@ -45,3 +45,50 @@
 - **Stark**: Datenbanken, sehr auswertbar, Einfügen aufwändig.  
 
 > **Kernidee:** Je stärker Daten strukturiert sind, desto besser lassen sie sich **suchen und analysieren**, aber desto höher der **Aufwand bei der Pflege**.
+# Statistik – Datentypen, Skalen & Häufbarkeit
+
+Kurzüberblick über **diskrete vs. stetige Daten**, **Skalentypen** (Nominal, Ordinal, Kardinal) und **Häufbarkeit** mit Beispielen aus TBZ (Abteilung IT).
+
+---
+
+## Inhalt
+- [Diskrete vs. Stetige Daten](#diskrete-vs-stetige-daten)
+- [Skalentypen](#skalentypen)
+
+---
+
+## Diskrete vs. Stetige Daten
+
+| Typ       | Definition                                                                 | Beispiel (TBZ)                                                                 |
+|-----------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| **Diskret**  | Werte **abzählbar** (endliche/abzählbar unendliche Anzahl von Ausprägungen) | Lieblingsmodul im Berufsbild Informatik (endliche Liste von Modulen)           |
+| **Stetig**   | Werte **nicht abzählbar** (kontinuierliche Skala)                         | Freitext-Kommentare zum Modul **m162** (beliebiger Text)                        |
+
+---
+
+## Skalentypen
+
+### Nominalskala
+- **Keine Rangordnung** zwischen den Ausprägungen.
+- **Beispiel**: Lieblingsmodul – alle Module sind gleichwertig.
+
+### Ordinalskala
+- **Rangordnung vorhanden**, **Abstände nicht** gleich interpretierbar.
+- **Beispiel**: Schulnoten für **m162** – Note 5 > Note 4, aber der „Abstand“ 4→5 ist nicht zwingend so groß wie 5→6.
+
+### Kardinalskala
+- **Rangordnung** **und** **gleichmäßige, interpretierbare Abstände**.
+- **Beispiel**: Trinkmenge pro Tag (z. B. Liter/Deziliter) – 2 L > 1 L und der Abstand 1→2 L entspricht 2→3 L.
+- **Hinweis**: Noten sind **nicht kardinal**, da die „Abstände“ zwischen Noten nicht gleich groß sein müssen.
+
+```mermaid
+flowchart TD
+    A[Merkmals- & Skalentypen] --> B[Nominal]
+    A --> C[Ordinal]
+    A --> D[Kardinal]
+    B:::nominal --> B1(Beispiele: Lieblingsmodul)
+    C:::ordinal --> C1(Beispiele: Noten)
+    D:::kardinal --> D1(Beispiele: Liter/Tag)
+    classDef nominal fill:#e8f0fe,stroke:#4663ff,stroke-width:1px,color:#1a2b6b;
+    classDef ordinal fill:#fff7e6,stroke:#ff9f0a,stroke-width:1px,color:#7a3e00;
+    classDef kardinal fill:#e8fff0,stroke:#22a06b,stroke-width:1px,color:#0b4b33;
