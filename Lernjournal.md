@@ -92,7 +92,7 @@ flowchart TD
     classDef nominal fill:#e8f0fe,stroke:#4663ff,stroke-width:1px,color:#1a2b6b;
     classDef ordinal fill:#fff7e6,stroke:#ff9f0a,stroke-width:1px,color:#7a3e00;
     classDef kardinal fill:#e8fff0,stroke:#22a06b,stroke-width:1px,color:#0b4b33;
-
+```
 # Häufbarkeit
 
 ## Nicht häufbar
@@ -104,4 +104,4 @@ Mehrere Ausprägungen möglich (z. B. besuchte Module).
 ## Quellen / Weitere Infos
 - [Diskrete vs. stetige Merkmale + Häufbarkeit](#)
 - [Merkmalsarten & Skalentypen – 123Mathe](#)
-- [Crashkurs Statistik – Video Skalentypen](#)
+- [Crashkurs Statistik – Video Skalentypen](#) 
