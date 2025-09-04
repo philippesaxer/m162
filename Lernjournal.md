@@ -104,4 +104,85 @@ Mehrere Ausprägungen möglich (z. B. besuchte Module).
 ## Quellen / Weitere Infos
 - [Diskrete vs. stetige Merkmale + Häufbarkeit](#)
 - [Merkmalsarten & Skalentypen – 123Mathe](#)
-- [Crashkurs Statistik – Video Skalentypen](#) 
+- [Crashkurs Statistik – Video Skalentypen](#)
+
+# Lernjournal Tag 3
+  # Einfache Datentypen
+
+## Ganze Zahlen (Integer-Typen)
+- **Namen:** `INT`, `INTEGER`, `SMALLINT`, `BIGINT`, ...
+- **Wertebereich:** abhängig von Bitbreite (z. B. 16, 32, 64 Bit).
+- **Operationen:** Grundrechenarten, Vergleich, Division mit Rest/Modulo.
+
+## Natürliche Zahlen (Unsigned)
+- **Namen:** `UNSIGNED INT`, `CARDINAL`, `WORD`, ...
+- **Wertebereich:** nur positive Zahlen, abhängig von Bitbreite.
+- **Operationen:** wie bei ganzen Zahlen.
+
+## Festkommazahlen (Dezimalzahlen)
+- **Namen:** `DECIMAL`, `NUMERIC`, `CURRENCY`, ...
+- **Wertebereich:** abhängig von Stellenanzahl; `CURRENCY`: sehr großer Bereich.
+- **Operationen:** Grundrechenarten, Vergleich, Modulo.
+
+## Aufzählungstypen (ENUM, SET)
+- **Wertebereich:** frei definierbar (z. B. `ROT`, `BLAU`, `GELB`).
+- **Operationen:** Vergleich.
+
+## Boolean (Wahrheitswerte)
+- **Namen:** `BOOL`, `BOOLEAN`, `LOGICAL`.
+- **Wertebereich:** `TRUE/FALSE` oder `0/≠0`.
+- **Operationen:** logische Verknüpfungen (`AND`, `OR`, `NOT`, `XOR` …).
+
+## Zeichen (Character)
+- **Namen:** `CHAR`.
+- **Wertebereich:** alle Zeichen des Zeichensatzes.
+- **Operationen:** Vergleich, Umwandlung in Integer.
+
+## Gleitkommazahlen (Floating Point)
+- **Namen:** `FLOAT`, `REAL`, `DOUBLE`, ...
+- **Wertebereich:** je nach Genauigkeit (IEEE 754).
+- **Operationen:** Grundrechenarten, Vergleich.
+
+## Zeiger (Pointer)
+- **Namen:** `POINTER`, `ACCESS`, `*`.
+- **Wertebereich:** Adresse einer Speicherstelle.
+- **Operationen:** Referenz, Dereferenz, Adressarithmetik (in C/C++).
+
+## Nullzeiger
+- **Namen:** `NULL`, `NIL`, `None`, `Nothing`.
+- **Bedeutung:** verweist auf kein Objekt, unterscheidet sich von gültigen Pointern.
+
+---
+
+# Zusammengesetzte Datentypen
+
+## Zeichenketten (Strings)
+- **Feste Länge:** `CHAR(n)`
+- **Variable Länge:** `VARCHAR`, `STRING`, `TEXT`
+- **Operationen:** Teilstring, Länge, Konkatenation, Vergleich.
+
+## Datum & Zeit
+- **Namen:** `DATE`, `TIME`, `TIMESTAMP`.
+- **Speicherung:** meist Millisekunden seit Referenzdatum.
+- **Operationen:** Vergleich, Differenz, Formatierungen.
+
+## Binäre Daten (BLOB)
+- **Namen:** `BLOB`, `CLOB`.
+- **Wertebereich:** Bilder, Audio, Video, beliebige Binärdaten.
+- **Operationen:** Länge, Zusammensetzen, Vergleich.
+
+## Verbund/Struktur (Record/Struct)
+- **Namen:** `RECORD`, `STRUCT`, `CLASS`.
+- **Wertebereich:** Kombination unterschiedlicher Datentypen.
+- **Operationen:** Vergleich (abhängig von Sprache), Zuweisung.
+
+---
+
+# Speicherverwaltung (vereinfacht, Beispiel Java)
+
+- **Stack:** Speicherung einfacher Datentypen (z. B. `int`, `float`).
+- **Heap:** Speicherung zusammengesetzter Datentypen (z. B. Objekte, Strings).
+- **Pointer/Referenzen:** zeigen im Stack auf Objekte im Heap.  
+  - In **C/C++** sichtbar und nutzbar.  
+  - In **Java/C#** existieren auch, sind aber „versteckt“.  
+
