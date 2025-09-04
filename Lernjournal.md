@@ -186,3 +186,94 @@ Mehrere Ausprägungen möglich (z. B. besuchte Module).
   - In **C/C++** sichtbar und nutzbar.  
   - In **Java/C#** existieren auch, sind aber „versteckt“.  
 
+# Datenstrukturen
+
+## Datensatz / Record / Tupel
+- Enthält mehrere Werte unterschiedlicher Typen in fester Reihenfolge.  
+- Kann als **Zeile einer Tabelle** gesehen werden.  
+- **Beispiel:** `(ID=12, Name=Hans, Adresse=Zürcherstrasse 12)`
+
+---
+
+## Array
+- Sammlung von Elementen **gleichen Typs** (in dynamischen Sprachen auch gemischte Typen möglich).  
+- Zugriff über **Index**.  
+- Kann **mehrdimensional** sein (z. B. 2D-Matrizen).  
+- **Sonderform:** assoziatives Array (Dictionary) → Zugriff über Schlüssel statt Index.  
+- **Beispiele:**  
+  - `[12, 45, 23]`  
+  - `["pos01" = "Position 01"]`
+
+---
+
+## Verkettete Liste
+- Dynamische Speicherung beliebig vieler Objekte.  
+- Jedes Element verweist auf das **nächste Element**.  
+- Grundlage für komplexere Strukturen (z. B. Blockchain).  
+- **Analogie:** Zug, bei dem die Wagen verbunden sind.  
+- [Erklärungsvideo](https://studyflix.de/informatik/verkettete-liste-1433)
+
+---
+
+## Stapelspeicher / Stack
+- Speicherung nach dem **LIFO-Prinzip** (Last In, First Out).  
+- **Operationen:**  
+  - `push` = Element einfügen  
+  - `pop` = oberstes Element entfernen  
+  - `peek/top` = oberstes Element lesen  
+- **Analogie:** Stapel Teller oder Metro-Einstieg.  
+- [Erklärungsvideo](https://studyflix.de/informatik/stacks-885)
+
+---
+
+## Warteschlange / Queue
+- Speicherung nach dem **FIFO-Prinzip** (First In, First Out).  
+- **Operationen:**  
+  - `enqueue` = Element hinten einfügen  
+  - `dequeue` = vorderstes Element entfernen  
+- **Analogie:** Warteschlange vor einem Club.  
+- [Wikipedia](https://de.wikipedia.org/wiki/Warteschlange_(Datenstruktur))
+
+---
+
+## Vorrangwarteschlange / Priority Queue
+- Erweiterung der Queue mit **Prioritäten**.  
+- Immer das **wichtigste Element** wird zuerst entfernt.  
+- Häufig mit **Heaps** implementiert.  
+- **Analogie:** Club-Warteschlange mit **VIP-Liste**.  
+- [Wikipedia](https://de.wikipedia.org/wiki/Vorrangwarteschlange)
+
+---
+
+## Graph
+- Sammlung von **Knoten und Kanten**.  
+- Knoten können mehrere Verbindungen haben.  
+- **Operationen:** Einfügen, Löschen, Suchen.  
+- **Analogie:** GPS-Navigation mit vielen möglichen Wegen.  
+- [Erklärungsvideo](https://studyflix.de/informatik/grundbegriffe-der-graphentheorie-1285)
+
+---
+
+## Baum
+- Spezialform des Graphen: Jeder Knoten hat **max. einen Vorgänger** und mehrere Nachfolger.  
+- **Binärbaum:** max. zwei Kinder pro Knoten.  
+- **Suchbaum:** Elemente sind geordnet für schnelles Suchen.  
+- **Analogie:** Stamm mit Verzweigungen.  
+- [Erklärungsvideo](https://studyflix.de/informatik/binarbaum-1362)
+
+---
+
+## Heap
+- Kombination aus **Baum** + **Priority Queue**.  
+- Unterstützt: `insert`, `remove`, `extractMin`, oft auch `merge`, `changeKey`.  
+- Dient meist zur **schnellen Prioritätsverwaltung**.  
+- [Erklärungsvideo](https://studyflix.de/informatik/heap-1440)
+
+---
+
+## Hashtabelle
+- Schlüssel werden über eine **Hashfunktion** direkt auf Speicheradressen abgebildet.  
+- Sehr effizient für **Suchen, Einfügen und Löschen**.  
+- Nachteil: keine geordnete Darstellung der Schlüssel.  
+- **Analogie:** Nachschlagewerk mit direktem Zugriff.  
+- [Erklärungsvideo (englisch)](https://www.youtube.com/watch?v=MfhjkfocRR0)
