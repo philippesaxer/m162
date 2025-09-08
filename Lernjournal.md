@@ -341,3 +341,5 @@ flowchart TD
     D --> E[„Ein Unternehmen entscheidet, Dollar-Importe jetzt abzuwickeln, weil der Euro gerade stark ist. Oder ein Tourist tauscht Euro in Dollar, bevor der Kurs möglicherweise wieder fällt.“]
 
     classDef level fill:#f9f,stroke:#333,stroke-width:1px;
+```
+![Wissenstreppe](WISSENSTREPPE.png "Wissenstreppe")
