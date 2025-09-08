@@ -277,3 +277,38 @@ Mehrere Ausprägungen möglich (z. B. besuchte Module).
 - Nachteil: keine geordnete Darstellung der Schlüssel.  
 - **Analogie:** Nachschlagewerk mit direktem Zugriff.  
 - [Erklärungsvideo (englisch)](https://www.youtube.com/watch?v=MfhjkfocRR0)
+
+# Lernjournal Tag 4
+# JSON – Kurzüberblick
+
+## Was ist JSON?
+- **JSON = JavaScript Object Notation**  
+- Textformat zum **Speichern und Austauschen von Daten**  
+- **Sprachunabhängig**, basiert aber auf JavaScript-Syntax  
+---
+
+## Eigenschaften
+- Daten werden als **Name/Wert-Paare** gespeichert  
+  Beispiel: "firstName":"Philippe"  
+- **Objekte** → geschweifte Klammern { "key":"value" }  
+- **Arrays** → eckige Klammern [...]  
+- Werte können sein: String, Number, Boolean, null, Array, Object  
+
+---
+
+## Vorteile
+- **Einfach** zu lesen und zu schreiben  
+- **Leicht übertragbar** auf Javascript
+- **Textbasiert**, daher in fast allen Sprachen nutzbar  
+
+---
+
+## JSON in JavaScript
+- JSON → Objekt: `JSON.parse(text)`  
+- Objekt → JSON: `JSON.stringify(obj)`  
+
+### Beispiel
+```js
+let text = '{"name":"John","age":30}';
+let obj = JSON.parse(text);
+console.log(obj.name); // John
