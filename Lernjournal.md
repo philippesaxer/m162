@@ -308,6 +308,7 @@ Mehrere Ausprägungen möglich (z. B. besuchte Module).
 - Objekt → JSON: `JSON.stringify(obj)`  
 
 ### Beispiel
+```js
 {
 [
 "Vorname": "Lara", 
