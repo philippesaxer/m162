@@ -308,7 +308,14 @@ Mehrere Ausprägungen möglich (z. B. besuchte Module).
 - Objekt → JSON: `JSON.stringify(obj)`  
 
 ### Beispiel
-```js
-let text = '{"name":"John","age":30}';
-let obj = JSON.parse(text);
-console.log(obj.name); // John
+{
+[
+"Vorname": "Lara", 
+"Nachname": "Meier",
+"Strasse: "Sonnenweg 12",
+"Ort": "Luzern",
+"Geburtsdatum": "1995-03-14",
+"Hobbies: ["Wandern","Lesen"],
+]
+},
+
