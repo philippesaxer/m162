@@ -321,4 +321,23 @@ Mehrere Ausprägungen möglich (z. B. besuchte Module).
 },
 ```
 # Wissenstreppe
+# Wissenstreppe: Wechselkurs
 
+```mermaid
+flowchart TD
+    A[1. Zeichen] --> B[2. Daten]
+    B --> C[3. Information]
+    C --> D[4. Wissen]
+    D --> E[5. Kompetenz]
+
+    classDef level fill:#f9f,stroke:#333,stroke-width:1px;
+```
+
+```mermaid
+flowchart TD
+    A[€, $, 1,05] --> B[1 € = 1,05 $]
+    B --> C[„Ein Euro ist heute 1,05 US-Dollar wert.“]
+    C --> D[„Wenn der Wechselkurs steigt, bekomme ich für einen Euro mehr Dollar. Ein hoher Eurokurs macht Importe aus den USA günstiger, aber deutsche Exporte teurer.“]
+    D --> E[„Ein Unternehmen entscheidet, Dollar-Importe jetzt abzuwickeln, weil der Euro gerade stark ist. Oder ein Tourist tauscht Euro in Dollar, bevor der Kurs möglicherweise wieder fällt.“]
+
+    classDef level fill:#f9f,stroke:#333,stroke-width:1px;
