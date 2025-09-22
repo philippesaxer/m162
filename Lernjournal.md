@@ -345,76 +345,88 @@ flowchart TD
 ![Wissenstreppe](WISSENSTREPPE.png "Wissenstreppe")
 .
 
-🔹 CSV in Excel importieren
+# Lernjournal Tag 5
 
-Eine CSV-Datei („Comma Separated Values“) ist eine Textdatei, in der Daten meist durch Kommas oder Semikolons getrennt sind. Excel kann diese direkt öffnen oder gezielt importieren.
+# Theorie Datenmodellierung – Zusammenfassung
 
-Methode 1: CSV direkt öffnen
+## 1. Grundlagen: ERD und ERM
+- **ERM (Entity-Relationship-Model):** Gesamtes Modell, Sammlung von Diagrammen, kann Metadaten enthalten.  
+- **ERD (Entity-Relationship-Diagram):** Einzelnes Diagramm, zeigt Entitäten und deren Beziehungen.  
+- **Entität:** Objekt mit Attributen (z. B. „Mitarbeiter“ mit Vorname, Nachname …).  
+- **Beziehung / Assoziation:** Verbindung zwischen Entitäten, mit **Kardinalitäten** spezifiziert.  
 
-Doppelklicke die .csv-Datei → sie öffnet sich automatisch in Excel.
+---
 
-Problem: Excel versucht die Trennung zu erraten (manchmal falsch).
+## 2. Beziehungen und Kardinalitäten
+- **Kardinalitäten:** geben an, wie viele Entitäten miteinander verknüpft sind:  
+  - `1` = genau eine  
+  - `c` = null oder eine  
+  - `m` = mindestens eine  
+  - `mc` = null, eine oder mehrere  
 
-Methode 2: CSV sauber importieren
+- **Beziehungstypen:**  
+  - Hierarchisch  
+  - Konditionell  
+  - Netzwerkförmig  
 
-Öffne Excel.
+---
 
-Gehe auf Daten → Aus Text/CSV.
+## 3. Redundanzen & Anomalien
+- **Redundanz:** Mehrfach gespeicherte Daten → fehleranfällig.  
+- **Anomalien:**  
+  - **Einfüge-Anomalie** → neue Daten können nicht eingefügt werden.  
+  - **Änderungs-Anomalie** → gleiche Info mehrfach vorhanden, Änderungen inkonsistent.  
+  - **Lösch-Anomalie** → Löschung entfernt auch wichtige Daten unbeabsichtigt.  
 
-Wähle die Datei.
+---
 
-Im Vorschaufenster:
+## 4. Modellarten
+- **Konzeptionelles Modell:**  
+  - Grundkonzept, Entitäten evtl. ohne Attribute, m(c):m(c) erlaubt.  
+- **Logisches Modell:**  
+  - Attribute, PK/FK, nur umsetzbare Beziehungen, DBMS-neutral.  
+- **Physisches Modell:**  
+  - DBMS-spezifische Datentypen, Tabellenstruktur, Constraints.  
 
-Trennzeichen einstellen (Komma, Semikolon, Tab …).
+---
 
-Spaltenformat festlegen (z. B. Zahl, Text, Datum).
+## 5. Vom Konzeptionellen zum Logischen Modell
+- **Primärschlüssel (PK):** Eindeutige Identifikation pro Entität.  
+- **Fremdschlüssel (FK):** Referenziert PK einer anderen Tabelle.  
+- **Auflösung m(c):m(c):** Einführung von Zwischentabellen (assoziative Entitäten).  
 
-Mit Laden in ein Arbeitsblatt importieren.
+### Umwandlungsprozesse
+- **Variante 1:** PK → Auflösung m:n → FK → restliche Attribute.  
+- **Variante 2:** m:n → PK → FK → restliche Attribute.  
 
-👉 Vorteil: Du hast Kontrolle über die Datenformate (wichtig z. B. für Postleitzahlen, die sonst führende Nullen verlieren können).
+---
 
-🔹 CSV import: typische Stolperfallen
+## 6. Vom Logischen zum Physischen Modell
+- Entitäten → Tabellen.  
+- **Begriffe:**  
+  - Tabelle (Entität), Spalte (Attribut), Datensatz (Row), Feld (Value).  
+- **DBMS-spezifische Eigenschaften:**  
+  - Datentypen (z. B. `varchar`, `int`).  
+  - **PK:** Primary Key  
+  - **FK:** Foreign Key  
+  - **NN:** Not Null (→ Unterschied zwischen `1` und `c`)  
+  - **UQ:** Unique  
 
-Dezimaltrennzeichen: In Deutschland oft Komma, aber CSV kann Punkt haben → prüfen.
+- In Praxis meist als **1:N** bezeichnet (entspricht 1:m oder c:m).  
 
-Encoding: Umlaute können „�“ werden → beim Import ggf. UTF-8 auswählen.
+---
 
-Datumsangaben: Excel wandelt gern automatisch um → Spalte auf Text stellen, wenn du das nicht willst.
+## 7. Normalformen
+- **1NF:** Atomare Werte, keine Mehrfachattribute.  
+- **2NF:** 1NF + keine partiellen Abhängigkeiten vom PK.  
+- **3NF:** 2NF + keine transitiven Abhängigkeiten.  
 
-🔹 Diagramme in Excel erstellen
+---
 
-Wenn die CSV-Daten importiert sind, kannst du mit wenigen Klicks Diagramme bauen.
+## 8. Datenkonsistenz & -integrität
+- **Konsistenz:** Widerspruchsfreie Daten (z. B. keine doppelten Adressen).  
+- **Integrität:** Regeln zur Sicherstellung korrekter Daten:  
+  - **Referenzielle Integrität:** FK muss auf existierenden PK zeigen.  
+  - **Constraints:** PK, FK, Unique, Not Null.  
 
-Schritt-für-Schritt
-
-Markiere die relevanten Daten (Spalten/Zeilen).
-
-Gehe auf Einfügen → Bereich Diagramme.
-
-Wähle den Typ:
-
-Säulen-/Balkendiagramm: gut für Vergleiche.
-
-Linien-/Flächendiagramm: Zeitverläufe.
-
-Kreisdiagramm: Anteile.
-
-Punkt(XY)-Diagramm: Korrelationen.
-
-Excel erzeugt ein Standarddiagramm.
-
-Diagramm anpassen
-
-Diagrammelemente hinzufügen (Achsentitel, Legende, Datenbeschriftung).
-
-Farben und Design über Diagrammtools → Format.
-
-Dynamik: Wenn du mit Tabellen arbeitest (Einfügen → Tabelle), wächst das Diagramm automatisch mit neuen Daten.
-
-🔹 Extra: Automatisierung
-
-PivotCharts: Erstellt Diagramme auf Basis von Pivot-Tabellen – ideal für große CSV-Datensätze.
-
-Makros/VBA oder Power Query: Für regelmäßige CSV-Updates.
-
-Power Query (Get & Transform): Besonders stark, wenn du regelmäßig CSVs importieren und bereinigen musst.
+---
