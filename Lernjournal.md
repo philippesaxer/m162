@@ -343,3 +343,78 @@ flowchart TD
     classDef level fill:#f9f,stroke:#333,stroke-width:1px;
 ```
 ![Wissenstreppe](WISSENSTREPPE.png "Wissenstreppe")
+.
+
+🔹 CSV in Excel importieren
+
+Eine CSV-Datei („Comma Separated Values“) ist eine Textdatei, in der Daten meist durch Kommas oder Semikolons getrennt sind. Excel kann diese direkt öffnen oder gezielt importieren.
+
+Methode 1: CSV direkt öffnen
+
+Doppelklicke die .csv-Datei → sie öffnet sich automatisch in Excel.
+
+Problem: Excel versucht die Trennung zu erraten (manchmal falsch).
+
+Methode 2: CSV sauber importieren
+
+Öffne Excel.
+
+Gehe auf Daten → Aus Text/CSV.
+
+Wähle die Datei.
+
+Im Vorschaufenster:
+
+Trennzeichen einstellen (Komma, Semikolon, Tab …).
+
+Spaltenformat festlegen (z. B. Zahl, Text, Datum).
+
+Mit Laden in ein Arbeitsblatt importieren.
+
+👉 Vorteil: Du hast Kontrolle über die Datenformate (wichtig z. B. für Postleitzahlen, die sonst führende Nullen verlieren können).
+
+🔹 CSV import: typische Stolperfallen
+
+Dezimaltrennzeichen: In Deutschland oft Komma, aber CSV kann Punkt haben → prüfen.
+
+Encoding: Umlaute können „�“ werden → beim Import ggf. UTF-8 auswählen.
+
+Datumsangaben: Excel wandelt gern automatisch um → Spalte auf Text stellen, wenn du das nicht willst.
+
+🔹 Diagramme in Excel erstellen
+
+Wenn die CSV-Daten importiert sind, kannst du mit wenigen Klicks Diagramme bauen.
+
+Schritt-für-Schritt
+
+Markiere die relevanten Daten (Spalten/Zeilen).
+
+Gehe auf Einfügen → Bereich Diagramme.
+
+Wähle den Typ:
+
+Säulen-/Balkendiagramm: gut für Vergleiche.
+
+Linien-/Flächendiagramm: Zeitverläufe.
+
+Kreisdiagramm: Anteile.
+
+Punkt(XY)-Diagramm: Korrelationen.
+
+Excel erzeugt ein Standarddiagramm.
+
+Diagramm anpassen
+
+Diagrammelemente hinzufügen (Achsentitel, Legende, Datenbeschriftung).
+
+Farben und Design über Diagrammtools → Format.
+
+Dynamik: Wenn du mit Tabellen arbeitest (Einfügen → Tabelle), wächst das Diagramm automatisch mit neuen Daten.
+
+🔹 Extra: Automatisierung
+
+PivotCharts: Erstellt Diagramme auf Basis von Pivot-Tabellen – ideal für große CSV-Datensätze.
+
+Makros/VBA oder Power Query: Für regelmäßige CSV-Updates.
+
+Power Query (Get & Transform): Besonders stark, wenn du regelmäßig CSVs importieren und bereinigen musst.
