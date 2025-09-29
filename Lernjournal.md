@@ -361,7 +361,7 @@ flowchart TD
 - **Kardinalitäten:** geben an, wie viele Entitäten miteinander verknüpft sind:  
   - `1` = genau eine  
   - `c` = null oder eine  
-  - `m` = mindestens eine  
+  - `m oder n` = mindestens eine  
   - `mc` = null, eine oder mehrere  
 
 - **Beziehungstypen:**  
@@ -430,3 +430,37 @@ flowchart TD
   - **Constraints:** PK, FK, Unique, Not Null.  
 
 ---
+# Lernjournal Tag 6
+
+## Prüfungs fehler
+
+- Um einen sinnvolle Information zu können braucht es einen definierten Zeichensatz.(z.B. UTF-8)
+- Ordnen gegebenen Daten den korrekten Strukturen zu.
+- JSON Stuktur machen.
+- Ordne den Literale den Datentypen zu.
+
+## ERM
+
+- **Entität** → ein "Ding" oder Objekt, das man in der Datenbank beschreiben will  
+  *Beispiel:* Schüler, Auto, Buch  
+
+- **Attribut** → eine Eigenschaft dieser Entität  
+  *Beispiel:* Name, Geburtsdatum, Farbe  
+
+- **Beziehung** → Verknüpfung zwischen zwei (oder mehr) Entitäten  
+  *Beispiel:* Schüler **besucht** Schule, Autor **schreibt** Buch
+
+  ```mermaid
+erDiagram
+    SCHUELER {
+        int schueler_id
+        string name
+        date geburtsdatum
+    }
+    SCHULE {
+        int schule_id
+        string name
+        string adresse
+    }
+    SCHUELER ||--o{ SCHULE : besucht
+```
