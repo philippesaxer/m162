@@ -462,8 +462,9 @@ flowchart TD
    - Aufgeteilt in logische Gruppen
 
 3. **3. Normalform (3NF)**
-   - Erfüllt 2NF.
+   - Wenn 2NF.
    - Keine transitiven Abhängigkeiten (Nicht-Schlüssel-Attribute hängen nicht von anderen Nicht-Schlüssel-Attributen ab).
+
 
 
 ### Beispiel: Student belegt Kurs
@@ -521,3 +522,91 @@ flowchart TD
 |-----------|------------|
 | 1         | Mathe      |
 | 1         | Informatik |
+
+# Zusammenfassung: ERM & ERD
+
+## 1. Grundbegriffe
+- **ERD (Entity-Relationship Diagram)**
+  - Einzelnes Diagramm mit Entitäten, Attributen und Beziehungen.
+- **ERM (Entity-Relationship Model)**
+  - Sammlung von ERDs, ggf. mit Metadaten.
+- In der Praxis oft synonym verwendet.
+
+---
+
+## 2. Entitäten & Beziehungen
+- **Entität**: Objekt mit Attributen (z. B. „Lehrperson“ mit Vorname, Nachname, Alter).  
+  → Wird später zur Tabelle.
+- **Beziehung/Assoziation**: Verbindung zwischen Entitäten (Linien).
+- **Kardinalität**: Gibt an, wie viele Datensätze verbunden sein können.
+
+### Kardinalitätstypen
+- **1** = genau ein Datensatz  
+- **c** = kein oder genau ein Datensatz  
+- **m** = mindestens ein Datensatz  
+- **mc** = beliebig viele Datensätze  
+
+### Beziehungstypen
+- **Hierarchisch** (1:m)  
+- **Konditionell**  
+- **Netzwerkförmig (m:n)**  
+
+---
+
+## 3. Redundanzen & Anomalien
+- **Redundanz** = mehrfache Speicherung → fehleranfällig
+
+### Anomalien
+- **Einfüge-Anomalie**: Keine neuen Daten wegen PK-Konflikt  
+- **Änderungs-Anomalie**: Änderung nur an einem Vorkommen → Inkonsistenz  
+- **Lösch-Anomalie**: Löschen entfernt ungewollt zusätzliche Daten  
+
+---
+
+## 4. Datenmodelle
+### a) Konzeptionelles Modell
+- Abstraktes Grundkonzept  
+- Entitäten & Beziehungen (wenige oder keine Attribute)  
+- m:n-Beziehungen erlaubt  
+
+### b) Logisches Modell
+- DBMS-unabhängig, aber tabellenorientiert  
+- Attribute, PK & FK definiert  
+- m:n-Beziehungen → durch **Zwischentabellen** (Transformationstabellen) auflösen  
+
+### c) Physisches Modell
+- DBMS-spezifisch  
+- Konkrete Datentypen (z. B. VARCHAR, INT)  
+- Regeln wie PK, FK, Not Null (NN), Unique (UQ)  
+- Begriffe: Tabelle, Spalte, Datensatz, Feld  
+
+---
+
+## 5. Schlüssel
+- **Primärschlüssel (PK)**: Eindeutige Identifikation eines Datensatzes  
+- **Fremdschlüssel (FK)**: Verweist auf PK einer anderen Tabelle, definiert Beziehungen  
+
+---
+
+## 6. Vom ERD zum physischen Modell
+1. Primärschlüssel hinzufügen  
+2. m:n-Beziehungen mit Zwischentabellen auflösen  
+3. Fremdschlüssel einfügen  
+4. Attribute hinzufügen  
+5. Im physischen Modell DBMS-spezifische Typen wählen  
+
+---
+
+## 7. Normalformen
+- **1NF**: Keine mehrfachen Werte, nur atomare Attribute  
+- **2NF**: Jedes Nichtschlüsselattribut hängt vom ganzen PK ab  
+- **3NF**: Keine transitiven Abhängigkeiten  
+
+---
+
+## 8. Datenkonsistenz & Integrität
+- **Datenkonsistenz** = Widerspruchsfreiheit  
+- **Referenzielle Integrität** = Ein FK muss auf einen existierenden PK zeigen  
+- DBMS verhindert unzulässige Verknüpfungen automatisch  
+
+---
