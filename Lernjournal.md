@@ -450,17 +450,74 @@ flowchart TD
 - **Beziehung** → Verknüpfung zwischen zwei (oder mehr) Entitäten  
   *Beispiel:* Schüler **besucht** Schule, Autor **schreibt** Buch
 
-  ```mermaid
-erDiagram
-    SCHUELER {
-        int schueler_id
-        string name
-        date geburtsdatum
-    }
-    SCHULE {
-        int schule_id
-        string name
-        string adresse
-    }
-    SCHUELER ||--o{ SCHULE : besucht
-```
+## Normalisierung
+
+### Normalformen
+
+1. **1. Normalform (1NF)**
+   - Mach atomar/elementar (keine Listen oder Mehrfachwerte in einer Zelle).
+
+2. **2. Normalform (2NF)**
+   - Wenn 1NF.
+   - Aufgeteilt in logische Gruppen
+
+3. **3. Normalform (3NF)**
+   - Erfüllt 2NF.
+   - Keine transitiven Abhängigkeiten (Nicht-Schlüssel-Attribute hängen nicht von anderen Nicht-Schlüssel-Attributen ab).
+
+
+### Beispiel: Student belegt Kurs
+
+#### Unnormalisiert
+| StudentID | Name      | Kurse             | Dozent       |
+|-----------|-----------|-------------------|--------------|
+| 1         | Anna Meier| Mathe, Informatik | Müller, Koch |
+
+---
+
+#### 1. Normalform (1NF)
+- Kurse und Dozenten werden **atomar** gespeichert.
+
+| StudentID | Name       | Kurs        | Dozent  |
+|-----------|------------|-------------|---------|
+| 1         | Anna Meier | Mathe       | Müller  |
+| 1         | Anna Meier | Informatik  | Koch    |
+
+---
+
+#### 2. Normalform (2NF)
+- Trennung, damit **Nicht-Schlüssel-Attribute** nicht nur teilweise vom Schlüssel abhängen.  
+- Aufteilung in zwei Tabellen: Studenten und Belegungen.
+
+**Student**  
+| StudentID | Name       |
+|-----------|------------|
+| 1         | Anna Meier |
+
+**Belegung**  
+| StudentID | Kurs       | Dozent  |
+|-----------|------------|---------|
+| 1         | Mathe      | Müller  |
+| 1         | Informatik | Koch    |
+
+---
+
+#### 3. Normalform (3NF)
+- Dozent hängt vom Kurs ab → also in eigene Tabelle auslagern.
+
+**Student**  
+| StudentID | Name       |
+|-----------|------------|
+| 1         | Anna Meier |
+
+**Kurs**  
+| Kurs       | Dozent  |
+|------------|---------|
+| Mathe      | Müller  |
+| Informatik | Koch    |
+
+**Belegung**  
+| StudentID | Kurs       |
+|-----------|------------|
+| 1         | Mathe      |
+| 1         | Informatik |
