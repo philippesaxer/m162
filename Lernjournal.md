@@ -598,9 +598,9 @@ flowchart TD
 ---
 
 ## 7. Normalformen
-- **1NF**: Keine mehrfachen Werte, nur atomare Attribute  
-- **2NF**: Jedes Nichtschlüsselattribut hängt vom ganzen PK ab  
-- **3NF**: Keine transitiven Abhängigkeiten  
+- **1NF**: Keine mehrfachen Werte, nur atomare Attribute, so klein wie möglich 
+- **2NF**: wenn 1NF, Jedes Nichtschlüsselattribut hängt vom ganzen PK ab, in logische Gruppen aufteilen  
+- **3NF**: wenn 2NF Keine transitiven Abhängigkeiten, keine abhängigkeit in der Tabelle z.B. Postleitzahl und Wohnort separat in neue Tabellel
 
 ---
 
@@ -610,3 +610,11 @@ flowchart TD
 - DBMS verhindert unzulässige Verknüpfungen automatisch  
 
 ---
+
+### Reverse Engineering ist einfach von einem Produkt zurück zur Planung.
+
+## ACID Modell
+- Atomicity
+- Consistency 
+- Isolation
+- Durability
