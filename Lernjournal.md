@@ -620,3 +620,9 @@ flowchart TD
 - Consistency 
 - Isolation
 - Durability
+
+### Am anfang von einer Nominaltabelle ab der 2NF soll es immer eine ID haben
+
+### Primary Key ist z.B. bei Mitarbeiter Personald ID, den braucht man immer. Foreign Key braucht es nur wenn es eine Beziehung gibt.
+
+### My SQL kommt sicher an Prüfung
