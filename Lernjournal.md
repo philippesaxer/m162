@@ -626,3 +626,123 @@ flowchart TD
 ### Primary Key ist z.B. bei Mitarbeiter Personald ID, den braucht man immer. Foreign Key braucht es nur wenn es eine Beziehung gibt.
 
 ### My SQL kommt sicher an Prüfung
+
+# Lernjournal Tag 8
+
+# Datenbankprojekt Schritt-für-Schritt Anleitung
+
+## Schritt 1: Modellierung – Entitäten und Beziehungen aus einer Problemsituation
+
+**Ziel:** Alle relevanten Entitäten und deren Beziehungen erkennen.
+
+1. **Problemsituation lesen & verstehen**  
+   - Beispiel: „Eine Bibliothek möchte Bücher, Autoren und Ausleihen verwalten.“  
+   - Frage: Wer oder was ist wichtig? → „Buch“, „Autor“, „Kunde“, „Ausleihe“.
+
+2. **Entitäten identifizieren**  
+   - Entitäten sind meist Nomen:  
+     - Buch  
+     - Autor  
+     - Kunde  
+     - Ausleihe  
+
+3. **Attribute der Entitäten notieren**  
+   - Buch → Titel, ISBN, Erscheinungsjahr  
+   - Autor → Name, Geburtsdatum  
+   - Kunde → Name, Kundennummer  
+   - Ausleihe → Ausleihdatum, Rückgabedatum  
+
+4. **Beziehungen zwischen Entitäten bestimmen**  
+   - Buch **hat** Autor → 1:n  
+   - Kunde **leiht aus** Buch → n:m  
+
+5. **Draw.io verwenden**  
+   - Neue Datei → „Blank Diagram“  
+   - Rechtecke = Entitäten  
+   - Linien = Beziehungen (erste Skizze, grob)
+
+---
+
+## Schritt 2: Logisches ERD – IDs, Attribute, Fremdschlüssel
+
+**Ziel:** Sauberes ERD mit eindeutigen IDs und Fremdschlüsseln.
+
+1. **Primärschlüssel definieren**  
+   - Buch → Buch_ID  
+   - Autor → Autor_ID  
+   - Kunde → Kunde_ID  
+   - Ausleihe → Ausleihe_ID  
+
+2. **Fremdschlüssel hinzufügen**  
+   - Autor_ID in Buch  
+   - Buch_ID & Kunde_ID in Ausleihe (für n:m Beziehung)  
+
+3. **Attribute hinzufügen**  
+   - Alle relevanten Attribute ergänzen  
+
+4. **Draw.io Logisches ERD**  
+   - Rechtecke → Entitäten  
+   - Unterteilung: Oben Entitätsname, darunter Primärschlüssel + Attribute  
+   - Linien → Beziehungen beschriften: „1:n“, „n:m“  
+
+5. **n:m Beziehung auflösen**  
+   - Zwischentabelle für Ausleihe mit Buch_ID und Kunde_ID  
+
+---
+
+## Schritt 3: Physisches ERD – Kardinalitäten, FKs, Integrität
+
+**Ziel:** Physisches Modell, direkt in MySQL umsetzbar.
+
+1. **Kardinalitäten überprüfen**  
+   - 1:n, n:m korrekt markieren  
+
+2. **Integrität definieren**  
+   - Fremdschlüssel: NOT NULL, ON DELETE CASCADE / SET NULL  
+
+3. **MySQL Workbench nutzen**  
+   - Neues EER-Diagramm erstellen  
+   - Tabellen anlegen → Primärschlüssel definieren  
+   - Fremdschlüssel setzen → Beziehungen zeichnen  
+
+4. **Optional: Constraints einfügen**  
+   - UNIQUE, NOT NULL, CHECK (z. B. Rückgabedatum ≥ Ausleihdatum)  
+
+---
+
+## Schritt 4: Datenstrukturierung – Kardinalitäten & Schlüssel umsetzen
+
+**Ziel:** Logik der Datenbank korrekt abbilden.
+
+1. **Kardinalitäten prüfen**  
+   - Jede Beziehung richtig umgesetzt  
+   - n:m → Zwischentabelle mit 2 FKs  
+
+2. **Primär- und Fremdschlüssel umsetzen**  
+   - In Workbench → Tabelle → Spalte → PK / FK setzen  
+
+3. **Testen**  
+   - Dummy-Daten einfügen → prüfen, ob Beziehungen korrekt erzwungen werden  
+
+---
+
+## Schritt 5: Dokumentation – Projektergebnisse speichern & strukturieren
+
+1. **Draw.io Diagramm speichern**  
+   - `.drawio` oder exportieren als PNG/PDF  
+
+2. **MySQL Workbench Modell speichern**  
+   - `.mwb`  
+   - Optional → SQL-Skript exportieren (Forward Engineer → SQL CREATE Script)  
+
+3. **Projektstruktur empfehlen**
+   
+```mermaid
+graph TD
+    A[Projekt] --> B[ERD]
+    B --> B1[logisches_erd.drawio]
+    B --> B2[physisches_erd.drawio]
+    A --> C[SQL]
+    C --> C1[create_tables.sql]
+    A --> D[Dokumentation]
+    D --> D1[projektdokumentation.pdf]
