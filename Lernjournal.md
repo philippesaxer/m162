@@ -1,5 +1,15 @@
 # m162
 
+## Inhaltsverzeichnis
+1. [Tag 1 – GitHub & Markdown](#lernjournal-tag-1)
+2. [Tag 2 – Datenstrukturen & Statistik](#lernjournal-tag-2)
+3. [Tag 3 – Datentypen & Datenstrukturen](#lernjournal-tag-3)
+4. [Tag 4 – JSON & Wissenstreppe](#lernjournal-tag-4)
+5. [Tag 5 – Theorie Datenmodellierung](#lernjournal-tag-5)
+6. [Tag 6 – ERM, Normalisierung & Schlüssel](#lernjournal-tag-6)
+7. [Tag 7 – Reverse Engineering & ACID-Modell](#lernjournal-tag-7)
+8. [Tag 8 – Datenbankprojekt Schritt-für-Schritt](#lernjournal-tag-2)
+9. 
 # Lernjournal Tag 1
 
 - [GitHub Einführung](#github-einführung)
