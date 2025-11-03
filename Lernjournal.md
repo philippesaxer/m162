@@ -756,3 +756,52 @@ graph TD
     C --> C1[create_tables.sql]
     A --> D[Dokumentation]
     D --> D1[projektdokumentation.pdf]
+# **Tag 8 – Datenbankprojekt Schritt-für-Schritt**
+
+## **Schritt 1: Modellierung**
+- Entitäten und Beziehungen erkennen  
+- Beispiel: **Bibliothek**
+  - **Entitäten:** Buch, Autor, Kunde, Ausleihe  
+  - **Beziehungen:**
+    - Buch – Autor → *1 :n*  
+    - Kunde – Buch → *n :m* über **Ausleihe**
+
+---
+
+## **Schritt 2: Logisches ERD**
+- Definiere **Primärschlüssel (ID)**, **Attribute** und **Fremdschlüssel**  
+- Beispielattribute:
+  - `Buch_ID`, `Autor_ID`, `Kunde_ID`, `Ausleihe_ID`
+- Beziehungen im Tool (z. B. Draw.io oder MySQL Workbench) visualisieren  
+
+---
+
+## **Schritt 3: Physisches Modell**
+- Ergänze Kardinalitäten & Integritätsbedingungen  
+  - `FOREIGN KEY`, `NOT NULL`, `ON DELETE CASCADE`  
+- Überführe das logische Modell in MySQL Workbench  
+
+---
+
+## **Schritt 4: Datenstrukturierung**
+- **n:m-Beziehungen** immer über eine **Zwischentabelle** lösen  
+- Tabellen mit Testdaten befüllen und Abfragen durchführen  
+
+---
+
+## **Schritt 5: Dokumentation**
+- Alles strukturiert dokumentieren:  
+  - ER-Diagramme  
+  - SQL-Code  
+  - Screenshots  
+  - kurze Erklärung des Ablaufs  
+
+```mermaid
+graph TD
+A[Projekt] --> B[ERD]
+B --> B1[logisches_erd.drawio]
+B --> B2[physisches_erd.drawio]
+A --> C[SQL]
+C --> C1[create_tables.sql]
+A --> D[Dokumentation]
+D --> D1[projektdokumentation.pdf]
