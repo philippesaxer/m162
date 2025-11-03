@@ -9,7 +9,7 @@
 6. [Tag 6 – ERM, Normalisierung & Schlüssel](#lernjournal-tag-6)
 7. [Tag 7 – Reverse Engineering & ACID-Modell](#lernjournal-tag-7)
 8. [Tag 8 – Datenbankprojekt Schritt-für-Schritt](#lernjournal-tag-8)
-9. 
+   
 # Lernjournal Tag 1
 
 - [GitHub Einführung](#github-einführung)
